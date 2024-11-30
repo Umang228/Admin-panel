@@ -1,21 +1,67 @@
+/* Tailwind utility for light blue and overall theme */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-gray-50 text-gray-800;
+}
+
+.light-blue-bg {
+  background-color: #e6f4ff; /* Light blue shade */
+}
+
+.light-blue-btn {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.icon-btn {
+  @apply p-2 rounded-full flex items-center justify-center;
+}
+
+.table-header {
+  @apply bg-gray-200 font-semibold;
+}
+
+.hover-dropdown {
+  position: relative;
+}
+
+.hover-dropdown-content {
+  @apply absolute right-0 mt-2 w-40 bg-white shadow-md rounded-md py-2;
+  display: none;
+  z-index: 10;
+}
+
+.hover-dropdown:hover .hover-dropdown-content {
+  display: block;
+}
+
+
+/* Adjusted styles for the Navbar */
+.light-blue-bg {
+  background-color: #e6f4ff; /* Light blue background */
+}
+
+.icon-btn {
+  @apply p-2 rounded-full flex items-center justify-center relative;
+}
+
+/* Dropdown styles */
+.hover-dropdown {
+  position: relative;
+}
+
+.hover-dropdown-content {
+  @apply absolute right-0 mt-2 w-48 bg-white shadow-md rounded-md py-2;
+  display: none;
+  z-index: 10;
+}
+
+.hover-dropdown:hover .hover-dropdown-content {
+  display: block;
+}
+
+.bg-light-blue-bg {
+  background-color: rgb(37 99 235 / var(--tw-text-opacity, 1));
 }
