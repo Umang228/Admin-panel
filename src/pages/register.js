@@ -2,27 +2,28 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
-export default function Login() {
+export default function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const router = useRouter();
 
-  const handleLogin = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-    // Dummy login logic for now
-    if (email === 'admin@gmail.com' && password === 'password') {
-      alert('Login Successful!');
-      router.push('/'); // Redirect to Dashboard
+    // Dummy registration logic
+    if (password !== confirmPassword) {
+      alert('Passwords do not match.');
     } else {
-      alert('Invalid credentials. Try "admin@gmail.com" with "password".');
+      alert('Registration Successful!');
+      router.push('/login');
     }
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-6 rounded-md shadow-md w-full max-w-md">
-        <h1 className="text-xl font-bold mb-4 text-center">Login</h1>
-        <form onSubmit={handleLogin}>
+        <h1 className="text-xl font-bold mb-4 text-center">Register</h1>
+        <form onSubmit={handleRegister}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Email
@@ -49,21 +50,34 @@ export default function Login() {
               className="mt-1 block w-full p-2 border rounded-md"
             />
           </div>
+          <div className="mb-4">
+            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+              Confirm Password
+            </label>
+            <input
+              type="password"
+              id="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+              className="mt-1 block w-full p-2 border rounded-md"
+            />
+          </div>
           <button
             type="submit"
             className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
           >
-            Login
+            Register
           </button>
         </form>
         <div className="mt-4 text-center">
           <p>
-            Don't have an account?{' '}
+            Already have an account?{' '}
             <button
-              onClick={() => router.push('/register')}
+              onClick={() => router.push('/login')}
               className="text-blue-500 underline hover:text-blue-700"
             >
-              Register Now
+              Login
             </button>
           </p>
         </div>

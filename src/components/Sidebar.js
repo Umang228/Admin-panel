@@ -149,7 +149,7 @@ export default function Sidebar() {
         </li>
         <li
           className={`p-4 flex items-center mx-4 rounded-xl ${
-            activeTab('/logout')
+            activeTab('/login')
               ? 'bg-light-blue-bg text-white'
               : 'hover:bg-light-blue-bg hover:text-gray-900'
           }`}
@@ -157,7 +157,7 @@ export default function Sidebar() {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className={`h-5 w-5 mr-3 ${
-              activeTab('/logout') ? 'text-white' : 'text-gray-500'
+              activeTab('/login') ? 'text-white' : 'text-gray-500'
             }`}
             fill="none"
             viewBox="0 0 24 24"
@@ -170,7 +170,7 @@ export default function Sidebar() {
               d="M17 16l4-4m0 0l-4-4m4 4H3"
             />
           </svg>
-          <Link href="">Logout</Link>
+          <Link href="/login">Logout</Link>
         </li>
       </ul>
     </div>
