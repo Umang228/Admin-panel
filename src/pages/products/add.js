@@ -143,6 +143,7 @@ export default function AddProduct() {
       <div className="flex justify-end space-x-4 mt-8">
         <button
           type="button"
+          onClick={() => router.push('/products')}
           className="bg-gray-200 text-gray-600 py-2 px-4 rounded-lg"
         >
           Cancel

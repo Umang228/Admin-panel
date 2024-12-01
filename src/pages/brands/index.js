@@ -11,7 +11,7 @@ export default function Brands() {
     {
       name: 'Nike',
       description: 'A leading sportswear brand',
-      logo: 'https://via.placeholder.com/50',
+      logo: '/download.webp',
     },
     {
       name: 'Adidas',
@@ -39,7 +39,7 @@ export default function Brands() {
       <h1 className="text-2xl font-bold mb-4">Brands</h1>
       <div className="bg-white p-4 rounded-lg shadow">
         <div className="flex justify-between items-center mb-4">
-          {/* Search Input with Icon */}
+          {/* Search Input */}
           <div className="relative w-1/3">
             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
               <svg
@@ -53,7 +53,7 @@ export default function Brands() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d="M11 4a7 7 0 100 14 7 7 0 000-14zm0 0L21 21"
+                  d="M21 21l-4.35-4.35M16.65 9.65a7 7 0 11-7-7 7 7 0 017 7z"
                 />
               </svg>
             </span>

@@ -4,14 +4,12 @@ export default function Navbar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (e) => {
-    const value = e.target.value;
-    setSearchTerm(value);
-    onSearch(value); // Trigger parent callback
+    setSearchTerm(e.target.value);
   };
 
   return (
     <header className="bg-white shadow-md fixed top-0 left-48 right-0 h-16 flex items-center px-6 justify-between">
-      {/* Search Input with Icon */}
+      {/* Search Input */}
       <div className="relative w-1/3">
         <input
           type="text"

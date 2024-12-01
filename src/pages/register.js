@@ -15,7 +15,7 @@ export default function Register() {
       alert('Passwords do not match.');
     } else {
       alert('Registration Successful!');
-      router.push('/login');
+      router.push('/');
     }
   };
 
@@ -74,7 +74,7 @@ export default function Register() {
           <p>
             Already have an account?{' '}
             <button
-              onClick={() => router.push('/login')}
+              onClick={() => router.push('/')}
               className="text-blue-500 underline hover:text-blue-700"
             >
               Login

@@ -68,6 +68,7 @@ export default function AddBrand() {
       <div className="flex justify-end space-x-4 mt-8">
         <button
           type="button"
+          onClick={() => router.push('/brands')}
           className="bg-gray-200 text-gray-600 py-2 px-4 rounded-lg"
         >
           Cancel

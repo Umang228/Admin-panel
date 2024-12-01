@@ -3,7 +3,11 @@ import { useRouter } from 'next/router';
 
 export default function Sidebar() {
   const router = useRouter();
-  const activeTab = (path) => router.pathname === path;
+  
+  function activeTab(path) {
+    const router = useRouter();
+    return router.pathname.startsWith(path);
+  }
 
   return (
     <div className="w-48 h-screen bg-white shadow-md fixed flex flex-col">
@@ -18,7 +22,7 @@ export default function Sidebar() {
         <ul className="space-y-1">
           <li
             className={`p-4 flex items-center mx-4 rounded-xl ${
-              activeTab('/')
+              activeTab('/dashboard')
                 ? 'bg-light-blue-bg text-white' // Active tab styles
                 : 'hover:bg-light-blue-bg hover:text-gray-900'
             }`}
@@ -26,7 +30,7 @@ export default function Sidebar() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className={`h-5 w-5 mr-3 ${
-                activeTab('/') ? 'text-white' : 'text-gray-500'
+                activeTab('/dashboard') ? 'text-white' : 'text-gray-500'
               }`}
               fill="none"
               viewBox="0 0 24 24"
@@ -39,7 +43,7 @@ export default function Sidebar() {
                 d="M4 6h16M4 10h16M4 14h16M4 18h16"
               />
             </svg>
-            <Link href="/">Dashboard</Link>
+            <Link href="/dashboard">Dashboard</Link>
           </li>
           <li
             className={`p-4 flex items-center mx-4 rounded-xl ${
@@ -170,7 +174,7 @@ export default function Sidebar() {
               d="M17 16l4-4m0 0l-4-4m4 4H3"
             />
           </svg>
-          <Link href="/login">Logout</Link>
+          <Link href="/">Logout</Link>
         </li>
       </ul>
     </div>
